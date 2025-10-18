@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root      # Senha root do MySQL
+      MYSQL_DATABASE: meusistema     # Banco que será criado automaticamente
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql       # Persistência dos dados do MySQL
+
+  backend:
+    build: ./backend
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: meusistema
+    ports:
+      - "4000:4000"                  # Porta que a API estará disponível
+    depends_on:
+      - db                           # Garante que o MySQL esteja rodando antes
+
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - "3000:3000"                  # Porta que o React estará disponível
+    depends_on:
+      - backend
+
+volumes:
+  db_data:                           # Volume para persistência do MySQL

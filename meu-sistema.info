@@ -1,0 +1,32 @@
+meu-sistema/
+│
+├── docker-compose.yml                 # Configuração para rodar backend, frontend e MySQL via Docker
+│
+├── backend/
+│   ├── Dockerfile                     # Imagem Docker do backend Node.js
+│   ├── package.json                   # Dependências do backend
+│   └── src/
+│       ├── server.js                  # Servidor principal Express + rotas
+│       ├── config/
+│       │   └── database.js            # Configuração do Sequelize/MySQL
+│       └── models/
+│           ├── Aluno.js              # Modelo Aluno
+│           └── Usuario.js             # Modelo Usuário
+│
+└── frontend/
+    ├── Dockerfile                     # Imagem Docker do frontend React
+    ├── package.json                   # Dependências do frontend
+    ├── index.html                      # HTML principal do React
+    └── src/
+        ├── index.css                  # TailwindCSS
+        ├── main.jsx                   # Entrada do React
+        ├── App.jsx                     # Componente principal que controla login/dashboard
+        ├── pages/
+        │   ├── Login.jsx               # Tela de login
+        │   ├── Dashboard.jsx           # Dashboard principal
+        │   ├── Alunos.jsx              # CRUD de alunos
+        │   └── Usuarios.jsx            # CRUD de usuários
+        └── components/
+            ├── Sidebar.jsx             # Menu lateral
+            ├── ModalAluno.jsx          # Modal para criar/editar aluno
+            └── ModalUsuario.jsx        # Modal para criar/editar usuário

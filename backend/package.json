@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",           // Permite requisições de outros domínios (frontend React)
+    "express": "^4.18.2",       // Framework web para criar API
+    "jsonwebtoken": "^9.0.2",   // Para autenticação JWT
+    "mysql2": "^3.6.0",         // Driver MySQL
+    "sequelize": "^6.35.1"      // ORM para manipular o MySQL de forma mais fácil
+  }
+}

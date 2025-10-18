@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",          // Vite para rodar a aplicação em desenvolvimento
+    "build": "vite build",  // Compila para produção
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",       // Para fazer requisições HTTP à API
+    "react": "^18.2.0",      // Biblioteca React
+    "react-dom": "^18.2.0"   // Para renderizar o React no DOM
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0", // Plugin React para Vite
+    "autoprefixer": "^10.4.16",       // Tailwind depende disso
+    "postcss": "^8.4.31",             // Tailwind depende disso
+    "tailwindcss": "^3.3.5",          // Framework CSS
+    "vite": "^5.0.0"                  // Bundler rápido
+  }
+}
